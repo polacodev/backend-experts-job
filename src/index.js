@@ -3,7 +3,7 @@ import { graphqlHTTP } from 'express-graphql';
 import { buildSchema } from 'graphql';
 import 'dotenv/config';
 
-var schema = buildSchema(`
+const schema = buildSchema(`
   type Query {
     hello: String
   }
@@ -13,7 +13,7 @@ const root = { hello: () => 'Hello world!' };
 
 const app = express();
 app.use('/graphql', graphqlHTTP({
-  schema: schema,
+  schema,
   rootValue: root,
   graphiql: true,
 }));
