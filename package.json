@@ -1,0 +1,13 @@
+{
+  "name": "backend-experts-job",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.com:marcobaltazarumss/backend-experts-job.git",
+  "author": "marco.baltazar <marco.baltazar@jalasoft.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0"
+  }
+}
