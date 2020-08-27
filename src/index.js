@@ -1,20 +1,16 @@
 import express from 'express';
+import cors from 'cors';
 import { graphqlHTTP } from 'express-graphql';
-import { buildSchema } from 'graphql';
+import schema from './schema';
+import database from './config/dbConfig';
 import 'dotenv/config';
 
-const schema = buildSchema(`
-  type Query {
-    hello: String
-  }
-`);
-
-const root = { hello: () => 'Hello world!' };
-
 const app = express();
+
+database();
+app.use(cors());
 app.use('/graphql', graphqlHTTP({
   schema,
-  rootValue: root,
   graphiql: true,
 }));
-app.listen(process.env.BACKEND_PORT, () => console.log(`Now browse to localhost:${process.env.BACKEND_PORT}/graphql`));
+app.listen(process.env.BACKEND_PORT, () => console.log(`localhost:${process.env.BACKEND_PORT}/graphql`));
