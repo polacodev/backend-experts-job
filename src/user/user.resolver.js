@@ -18,7 +18,7 @@ export const mutationType = new GraphQLObjectType({
       args: {
         user: { type: new GraphQLNonNull(userInput) },
       },
-      resolve: (root, args) => addUser(args),
+      resolve: (obj, args) => addUser(args),
     },
     updateUser: {
       type: userType,
@@ -26,14 +26,14 @@ export const mutationType = new GraphQLObjectType({
         _id: { type: new GraphQLNonNull(GraphQLID) },
         user: { type: new GraphQLNonNull(userInput) },
       },
-      resolve: (root, args) => updateUser(args),
+      resolve: (obj, args) => updateUser(args),
     },
     deleteUser: {
       type: userType,
       args: {
         _id: { type: new GraphQLNonNull(GraphQLID) },
       },
-      resolve: (root, args) => deleteUser(args),
+      resolve: (obj, args) => deleteUser(args),
     },
   }),
 });
@@ -50,7 +50,7 @@ export const queryType = new GraphQLObjectType({
       args: {
         _id: { type: new GraphQLNonNull(GraphQLID) },
       },
-      resolve: (root, args) => getUserByID(args),
+      resolve: (obj, args) => getUserByID(args),
     },
   }),
 });
