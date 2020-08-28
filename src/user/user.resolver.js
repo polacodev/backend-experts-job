@@ -6,18 +6,27 @@ import {
 } from 'graphql';
 import userType from './user.schema';
 import { getAllUsers, getUserByID, addUser } from './user.api';
+import userInput from '../types/user.type';
 
 export const mutationType = new GraphQLObjectType({
   name: 'Mutation',
-  fields: {
+  fields: () => ({
     addUser: {
       type: userType,
       args: {
-        title: { type: new GraphQLNonNull(GraphQLString) },
+        user: { type: new GraphQLNonNull(userInput) },
       },
       resolve: (root, args) => addUser(args),
     },
-  },
+    updateUser: {
+      type: userType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLString) },
+        user: { type: new GraphQLNonNull(userInput) },
+      },
+      resolve: (root, args) => addUser(args),
+    },
+  }),
 });
 
 export const queryType = new GraphQLObjectType({

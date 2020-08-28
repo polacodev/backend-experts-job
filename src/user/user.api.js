@@ -16,12 +16,17 @@ export const getUserByID = async ({ _id }) => {
   }
 };
 
-export const addUser = ({ title }) => {
+export const addUser = ({ user }) => {
   try {
-    const newTodo = new USER({
-      title,
+    const newUser = new USER({
+      name: user.name,
+      email: user.email,
+      password: user.password,
+      cellphone: user.cellphone,
+      workarea: user.workarea,
+      status: user.status,
     });
-    return newTodo.save();
+    return newUser.save();
   } catch (error) {
     return error;
   }
