@@ -1,11 +1,13 @@
 import {
   GraphQLNonNull,
-  GraphQLString,
+  GraphQLID,
   GraphQLObjectType,
   GraphQLList,
 } from 'graphql';
 import userType from './user.schema';
-import { getAllUsers, getUserByID, addUser } from './user.api';
+import {
+  getAllUsers, getUserByID, addUser, updateUser, deleteUser,
+} from './user.api';
 import userInput from '../types/user.type';
 
 export const mutationType = new GraphQLObjectType({
@@ -21,10 +23,17 @@ export const mutationType = new GraphQLObjectType({
     updateUser: {
       type: userType,
       args: {
-        id: { type: new GraphQLNonNull(GraphQLString) },
+        _id: { type: new GraphQLNonNull(GraphQLID) },
         user: { type: new GraphQLNonNull(userInput) },
       },
-      resolve: (root, args) => addUser(args),
+      resolve: (root, args) => updateUser(args),
+    },
+    deleteUser: {
+      type: userType,
+      args: {
+        _id: { type: new GraphQLNonNull(GraphQLID) },
+      },
+      resolve: (root, args) => deleteUser(args),
     },
   }),
 });
@@ -39,7 +48,7 @@ export const queryType = new GraphQLObjectType({
     getUserByID: {
       type: userType,
       args: {
-        _id: { type: new GraphQLNonNull(GraphQLString) },
+        _id: { type: new GraphQLNonNull(GraphQLID) },
       },
       resolve: (root, args) => getUserByID(args),
     },
