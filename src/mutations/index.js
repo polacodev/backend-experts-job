@@ -1,5 +1,5 @@
 import { GraphQLObjectType } from 'graphql';
-import { addUser, updateUser, deleteUser } from '../user/user.resolver';
+import { addUser, updateUser, deleteUser } from '../components/user/user.resolver';
 
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',

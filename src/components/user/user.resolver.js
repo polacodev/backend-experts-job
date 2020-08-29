@@ -4,7 +4,7 @@ import {
 import {
   getAllUsersAPI, getUserByIdAPI, addUserAPI, updateUserAPI, deleteUserAPI,
 } from './user.api';
-import userInput from '../types/user.type';
+import userInput from '../../types/user.type';
 import userType from './user.schema';
 
 export const addUser = {

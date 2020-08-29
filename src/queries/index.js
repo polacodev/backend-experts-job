@@ -1,5 +1,5 @@
 import { GraphQLObjectType } from 'graphql';
-import { getUser, getUsers } from '../user/user.resolver';
+import { getUser, getUsers } from '../components/user/user.resolver';
 
 const queryType = new GraphQLObjectType({
   name: 'Query',
