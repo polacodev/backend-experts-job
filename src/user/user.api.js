@@ -1,6 +1,6 @@
 import USER from './user.model';
 
-export const getAllUsers = async () => {
+export const getAllUsersAPI = async () => {
   try {
     return await USER.find();
   } catch (error) {
@@ -8,7 +8,7 @@ export const getAllUsers = async () => {
   }
 };
 
-export const getUserByID = async ({ _id }) => {
+export const getUserByIdAPI = async ({ _id }) => {
   try {
     return await USER.findById(_id);
   } catch (error) {
@@ -16,7 +16,7 @@ export const getUserByID = async ({ _id }) => {
   }
 };
 
-export const addUser = async ({ user }) => {
+export const addUserAPI = async ({ user }) => {
   try {
     const newUser = new USER({
       name: user.name,
@@ -32,7 +32,7 @@ export const addUser = async ({ user }) => {
   }
 };
 
-export const updateUser = async ({ _id, user }) => {
+export const updateUserAPI = async ({ _id, user }) => {
   try {
     return await USER.findByIdAndUpdate(_id, user, { new: true });
   } catch (error) {
@@ -40,7 +40,7 @@ export const updateUser = async ({ _id, user }) => {
   }
 };
 
-export const deleteUser = async ({ _id }) => {
+export const deleteUserAPI = async ({ _id }) => {
   try {
     return await USER.findByIdAndDelete(_id);
   } catch (error) {
