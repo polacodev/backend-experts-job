@@ -1,4 +1,13 @@
 import USER from './user.model';
+import buildCustomQuery from '../../constants/constant';
+
+export const getUsersFilterAPI = async ({ search }) => {
+  try {
+    return await USER.find(buildCustomQuery(search));
+  } catch (error) {
+    return error;
+  }
+};
 
 export const getAllUsersAPI = async () => {
   try {

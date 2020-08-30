@@ -4,7 +4,7 @@ import {
   GraphQLBoolean,
 } from 'graphql';
 
-const userInput = new GraphQLInputObjectType({
+const UserInput = new GraphQLInputObjectType({
   name: 'UserInput',
   fields: () => ({
     name: { type: GraphQLString },
@@ -16,4 +16,4 @@ const userInput = new GraphQLInputObjectType({
   }),
 });
 
-export default userInput;
+export default UserInput;

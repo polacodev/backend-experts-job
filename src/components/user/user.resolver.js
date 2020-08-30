@@ -2,15 +2,17 @@ import {
   GraphQLNonNull, GraphQLID, GraphQLList,
 } from 'graphql';
 import {
-  getAllUsersAPI, getUserByIdAPI, addUserAPI, updateUserAPI, deleteUserAPI,
+  getAllUsersAPI, getUserByIdAPI, addUserAPI,
+  updateUserAPI, deleteUserAPI, getUsersFilterAPI,
 } from './user.api';
-import userInput from '../../types/user.type';
+import UserInput from '../../types/user.type';
+import SearchUserType from '../../types/search.type';
 import userType from './user.schema';
 
 export const addUser = {
   type: userType,
   args: {
-    user: { type: new GraphQLNonNull(userInput) },
+    user: { type: new GraphQLNonNull(UserInput) },
   },
   resolve: (obj, args) => addUserAPI(args),
 };
@@ -19,7 +21,7 @@ export const updateUser = {
   type: userType,
   args: {
     _id: { type: new GraphQLNonNull(GraphQLID) },
-    user: { type: new GraphQLNonNull(userInput) },
+    user: { type: new GraphQLNonNull(UserInput) },
   },
   resolve: (obj, args) => updateUserAPI(args),
 };
@@ -43,4 +45,12 @@ export const getUser = {
     _id: { type: new GraphQLNonNull(GraphQLID) },
   },
   resolve: (obj, args) => getUserByIdAPI(args),
+};
+
+export const getCustomUsers = {
+  type: new GraphQLList(userType),
+  args: {
+    search: { type: new GraphQLNonNull(SearchUserType) },
+  },
+  resolve: (obj, args) => getUsersFilterAPI(args),
 };

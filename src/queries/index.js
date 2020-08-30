@@ -1,9 +1,9 @@
 import { GraphQLObjectType } from 'graphql';
-import { getUser, getUsers } from '../components/user/user.resolver';
+import { getUser, getUsers, getCustomUsers } from '../components/user/user.resolver';
 
 const queryType = new GraphQLObjectType({
   name: 'Query',
-  fields: { getUsers, getUser },
+  fields: { getUsers, getUser, getCustomUsers },
 });
 
 export default queryType;
