@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
+    "test": "jest --testEnvironment=node --verbose --forceExit --watchAll --coverage --maxWorkers=1",
     "lint": "eslint"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
   "devDependencies": {
     "eslint": "^7.7.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0"
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.4.2"
   }
 }
