@@ -30,4 +30,4 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true,
   extensions,
 }));
-app.listen(process.env.BACKEND_PORT, () => console.log(`localhost:${process.env.BACKEND_PORT}/graphql`));
+app.listen(process.env.BACKEND_PORT, () => console.log(`${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/graphql`));

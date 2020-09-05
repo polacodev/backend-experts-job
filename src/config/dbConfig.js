@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 
-const MONGO_URL = 'mongodb://localhost:27017/ExpertsJob';
+import 'dotenv/config';
+
+const MONGO_URL = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 const database = async () => {
   try {
     await mongoose.connect(MONGO_URL,
@@ -9,9 +11,9 @@ const database = async () => {
         useUnifiedTopology: true,
         useFindAndModify: false,
       });
-    console.log('DB Connection SUCCESSFULLY');
+    console.log(`DB ${process.env.DB_NAME} Connected SUCCESSFULLY`);
   } catch (error) {
-    console.log('DB Connection FAILED');
+    console.log(`DB ${process.env.DB_NAME} Connected FAILED`);
   }
 };
 
