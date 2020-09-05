@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`aaaa aaaa 1`] = `
+Object {
+  "config": Object {
+    "adapter": [Function],
+    "baseURL": "http://localhost:4000/graphql",
+    "data": "query=%0A%20%20%20%20query%20getAll%20%7B%0A%20%20%20%20%20%20%20getUsers%20%7B%0A%20%20%20%20%20%20%20%20%20...User%0A%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%20fragment%20User%20on%20UserType%20%7B%0A%20%20%20%20%20%20%20_id%0A%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20email%0A%20%20%20%20%20%20%20workarea%0A%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20cellphone%0A%20%20%20%20%20%7D%0A%20%20",
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Custom-Header": "foobar",
+    },
+    "maxBodyLength": -1,
+    "maxContentLength": -1,
+    "method": "post",
+    "timeout": 1000,
+    "transformRequest": Array [
+      [Function],
+    ],
+    "transformResponse": Array [
+      [Function],
+    ],
+    "url": "http://localhost:4000/graphql",
+    "validateStatus": [Function],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "data": Object {
+      "getUsers": Array [],
+    },
+    "extensions": Object {
+      "operation": null,
+      "runTime": 8705,
+    },
+  },
+  "headers": Object {
+    "content-type": "application/json; charset=utf-8",
+  },
+  "request": XMLHttpRequest {},
+  "status": 200,
+  "statusText": "OK",
+}
+`;
