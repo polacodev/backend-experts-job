@@ -5,6 +5,7 @@ import { graphqlHTTP } from 'express-graphql';
 import schema from './schema';
 import database from './config/dbConfig';
 import 'dotenv/config';
+import './config/colorLogConfig';
 
 const app = express();
 
@@ -30,4 +31,4 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true,
   extensions,
 }));
-app.listen(process.env.BACKEND_PORT, () => console.log(`${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/graphql`));
+app.listen(process.env.BACKEND_PORT, () => console.log('[success]'.success, `${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/graphql`));

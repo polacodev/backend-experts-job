@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 import 'dotenv/config';
+import './colorLogConfig';
 
 const MONGO_URL = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 const database = async () => {
@@ -11,9 +12,9 @@ const database = async () => {
         useUnifiedTopology: true,
         useFindAndModify: false,
       });
-    console.log(`DB ${process.env.DB_NAME} Connected SUCCESSFULLY`);
+    console.log('[success]'.success, `Connected ${process.env.DB_NAME} database`);
   } catch (error) {
-    console.log(`DB ${process.env.DB_NAME} Connected FAILED`);
+    console.log('[ error ]'.error, `Not Connected ${process.env.DB_NAME} database`);
   }
 };
 
