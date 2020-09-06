@@ -10,9 +10,9 @@ const app = express();
 
 const extensions = ({
   operationName,
-  context,
+  // context,
 }) => ({
-  runTime: Date.now() - context.startTime,
+  // runTime: Date.now() - context.startTime,
   operation: operationName,
 });
 
@@ -26,7 +26,7 @@ app.use('/graphql', graphqlHTTP({
     original: error.originalError,
     path: error.path,
   }),
-  context: { startTime: Date.now() },
+  // context: { startTime: Date.now() },
   graphiql: true,
   extensions,
 }));

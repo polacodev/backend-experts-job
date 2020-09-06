@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user component addNotification subscription for first notification 1`] = `
+Object {
+  "config": Object {
+    "adapter": [Function],
+    "baseURL": "http://localhost:4000/graphql",
+    "data": "query=%0A%20%20%20%20subscription%20addNotification%20%7B%0A%20%20%20%20%20%20addNotification(notification%3A%20%7B%0A%20%20%20%20%20%20%20%20user_id%3A%20%22id_fake%22%2C%0A%20%20%20%20%20%20%20%20message%3A%20%22first%20notification%22%0A%20%20%20%20%20%20%7D)%20%7B%0A%20%20%20%20%20%20%20%20user_id%0A%20%20%20%20%20%20%20%20message%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20",
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Custom-Header": "foobar",
+    },
+    "maxBodyLength": -1,
+    "maxContentLength": -1,
+    "method": "post",
+    "timeout": 1000,
+    "transformRequest": Array [
+      [Function],
+    ],
+    "transformResponse": Array [
+      [Function],
+    ],
+    "url": "http://localhost:4000/graphql",
+    "validateStatus": [Function],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "data": Object {
+      "addNotification": Object {
+        "message": "first notification",
+        "user_id": "id_fake",
+      },
+    },
+    "extensions": Object {
+      "operation": null,
+    },
+  },
+  "headers": Object {
+    "content-type": "application/json; charset=utf-8",
+  },
+  "request": XMLHttpRequest {},
+  "status": 200,
+  "statusText": "OK",
+}
+`;
+
+exports[`user component addNotification subscription for second notification 1`] = `
+Object {
+  "config": Object {
+    "adapter": [Function],
+    "baseURL": "http://localhost:4000/graphql",
+    "data": "query=%0A%20%20%20%20subscription%20addNotification%20%7B%0A%20%20%20%20%20%20addNotification(notification%3A%20%7B%0A%20%20%20%20%20%20%20%20user_id%3A%20%22id_fake%22%2C%0A%20%20%20%20%20%20%20%20message%3A%20%22second%20notification%22%0A%20%20%20%20%20%20%7D)%20%7B%0A%20%20%20%20%20%20%20%20user_id%0A%20%20%20%20%20%20%20%20message%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20",
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Custom-Header": "foobar",
+    },
+    "maxBodyLength": -1,
+    "maxContentLength": -1,
+    "method": "post",
+    "timeout": 1000,
+    "transformRequest": Array [
+      [Function],
+    ],
+    "transformResponse": Array [
+      [Function],
+    ],
+    "url": "http://localhost:4000/graphql",
+    "validateStatus": [Function],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "data": Object {
+      "addNotification": Object {
+        "message": "second notification",
+        "user_id": "id_fake",
+      },
+    },
+    "extensions": Object {
+      "operation": null,
+    },
+  },
+  "headers": Object {
+    "content-type": "application/json; charset=utf-8",
+  },
+  "request": XMLHttpRequest {},
+  "status": 200,
+  "statusText": "OK",
+}
+`;
+
+exports[`user component getAllNotifications query 1`] = `
+Object {
+  "config": Object {
+    "adapter": [Function],
+    "baseURL": "http://localhost:4000/graphql",
+    "data": "query=%0A%20%20%20%20query%20getAllNotifications%20%7B%0A%20%20%20%20%20%20getNotifications%20%7B%0A%20%20%20%20%20%20%20%20user_id%0A%20%20%20%20%20%20%20%20message%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20",
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Custom-Header": "foobar",
+    },
+    "maxBodyLength": -1,
+    "maxContentLength": -1,
+    "method": "post",
+    "timeout": 1000,
+    "transformRequest": Array [
+      [Function],
+    ],
+    "transformResponse": Array [
+      [Function],
+    ],
+    "url": "http://localhost:4000/graphql",
+    "validateStatus": [Function],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "data": Object {
+      "getNotifications": Array [
+        Object {
+          "message": "first notification",
+          "user_id": "id_fake",
+        },
+        Object {
+          "message": "second notification",
+          "user_id": "id_fake",
+        },
+      ],
+    },
+    "extensions": Object {
+      "operation": null,
+    },
+  },
+  "headers": Object {
+    "content-type": "application/json; charset=utf-8",
+  },
+  "request": XMLHttpRequest {},
+  "status": 200,
+  "statusText": "OK",
+}
+`;

@@ -1,0 +1,324 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user component addUser mutation for first user 1`] = `
+Object {
+  "config": Object {
+    "adapter": [Function],
+    "baseURL": "http://localhost:4000/graphql",
+    "data": "query=%0A%20%20%20%20mutation%20addUser%20%7B%0A%20%20%20%20%20%20addUser(user%3A%20%7B%20%0A%20%20%20%20%20%20%20%20name%3A%20%22ximena%22%2C%0A%20%20%20%20%20%20%20%20email%3A%20%22ximena%40gmail.com%22%2C%0A%20%20%20%20%20%20%20%20password%3A%20%22sucmar123%22%2C%0A%20%20%20%20%20%20%20%20cellphone%3A%20%2267543214%22%2C%0A%20%20%20%20%20%20%20%20workarea%3A%20%22developer%22%2C%0A%20%20%20%20%20%20%20%20status%3A%20false%0A%20%20%20%20%20%20%7D)%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20email%0A%20%20%20%20%20%20%20%20workarea%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20cellphone%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20",
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Custom-Header": "foobar",
+    },
+    "maxBodyLength": -1,
+    "maxContentLength": -1,
+    "method": "post",
+    "timeout": 1000,
+    "transformRequest": Array [
+      [Function],
+    ],
+    "transformResponse": Array [
+      [Function],
+    ],
+    "url": "http://localhost:4000/graphql",
+    "validateStatus": [Function],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "data": Object {
+      "addUser": Object {
+        "cellphone": "67543214",
+        "email": "ximena@gmail.com",
+        "name": "ximena",
+        "status": false,
+        "workarea": "developer",
+      },
+    },
+    "extensions": Object {
+      "operation": null,
+    },
+  },
+  "headers": Object {
+    "content-type": "application/json; charset=utf-8",
+  },
+  "request": XMLHttpRequest {},
+  "status": 200,
+  "statusText": "OK",
+}
+`;
+
+exports[`user component addUser mutation for second user 1`] = `
+Object {
+  "config": Object {
+    "adapter": [Function],
+    "baseURL": "http://localhost:4000/graphql",
+    "data": "query=%0A%20%20%20%20mutation%20addUser%20%7B%0A%20%20%20%20%20%20addUser(user%3A%20%7B%20%0A%20%20%20%20%20%20%20%20name%3A%20%22rolan%22%2C%0A%20%20%20%20%20%20%20%20email%3A%20%22rolan%40gmail.com%22%2C%0A%20%20%20%20%20%20%20%20password%3A%20%22rolan123%22%2C%0A%20%20%20%20%20%20%20%20cellphone%3A%20%2267543214%22%2C%0A%20%20%20%20%20%20%20%20workarea%3A%20%22developer%22%2C%0A%20%20%20%20%20%20%20%20status%3A%20false%0A%20%20%20%20%20%20%7D)%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20email%0A%20%20%20%20%20%20%20%20workarea%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20cellphone%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20",
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Custom-Header": "foobar",
+    },
+    "maxBodyLength": -1,
+    "maxContentLength": -1,
+    "method": "post",
+    "timeout": 1000,
+    "transformRequest": Array [
+      [Function],
+    ],
+    "transformResponse": Array [
+      [Function],
+    ],
+    "url": "http://localhost:4000/graphql",
+    "validateStatus": [Function],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "data": Object {
+      "addUser": Object {
+        "cellphone": "67543214",
+        "email": "rolan@gmail.com",
+        "name": "rolan",
+        "status": false,
+        "workarea": "developer",
+      },
+    },
+    "extensions": Object {
+      "operation": null,
+    },
+  },
+  "headers": Object {
+    "content-type": "application/json; charset=utf-8",
+  },
+  "request": XMLHttpRequest {},
+  "status": 200,
+  "statusText": "OK",
+}
+`;
+
+exports[`user component getAllUsers query 1`] = `
+Object {
+  "config": Object {
+    "adapter": [Function],
+    "baseURL": "http://localhost:4000/graphql",
+    "data": "query=%0A%20%20%20%20query%20getAllUsers%20%7B%0A%20%20%20%20%20%20getUsers%20%7B%0A%20%20%20%20%20%20%20%20...User%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20fragment%20User%20on%20UserType%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20email%0A%20%20%20%20%20%20workarea%0A%20%20%20%20%20%20status%0A%20%20%20%20%20%20cellphone%0A%20%20%20%20%7D",
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Custom-Header": "foobar",
+    },
+    "maxBodyLength": -1,
+    "maxContentLength": -1,
+    "method": "post",
+    "timeout": 1000,
+    "transformRequest": Array [
+      [Function],
+    ],
+    "transformResponse": Array [
+      [Function],
+    ],
+    "url": "http://localhost:4000/graphql",
+    "validateStatus": [Function],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "data": Object {
+      "getUsers": Array [
+        Object {
+          "cellphone": "67543214",
+          "email": "ximena@gmail.com",
+          "name": "ximena",
+          "status": false,
+          "workarea": "developer",
+        },
+        Object {
+          "cellphone": "67543214",
+          "email": "rolan@gmail.com",
+          "name": "rolan",
+          "status": false,
+          "workarea": "developer",
+        },
+      ],
+    },
+    "extensions": Object {
+      "operation": null,
+    },
+  },
+  "headers": Object {
+    "content-type": "application/json; charset=utf-8",
+  },
+  "request": XMLHttpRequest {},
+  "status": 200,
+  "statusText": "OK",
+}
+`;
+
+exports[`user component getCustomUsers query using name field 1`] = `
+Object {
+  "config": Object {
+    "adapter": [Function],
+    "baseURL": "http://localhost:4000/graphql",
+    "data": "query=%0A%20%20%20%20query%20customFilter%20%7B%0A%20%20%20%20%20%20getCustomUsers(search%3A%20%7Bname%3A%20%7Bcontains%3A%20%22la%22%7D%7D)%20%7B%0A%20%20%20%20%20%20%20%20...User%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20fragment%20User%20on%20UserType%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20email%0A%20%20%20%20%20%20workarea%0A%20%20%20%20%20%20status%0A%20%20%20%20%20%20cellphone%0A%20%20%20%20%7D",
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Custom-Header": "foobar",
+    },
+    "maxBodyLength": -1,
+    "maxContentLength": -1,
+    "method": "post",
+    "timeout": 1000,
+    "transformRequest": Array [
+      [Function],
+    ],
+    "transformResponse": Array [
+      [Function],
+    ],
+    "url": "http://localhost:4000/graphql",
+    "validateStatus": [Function],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "data": Object {
+      "getCustomUsers": Array [
+        Object {
+          "cellphone": "67543214",
+          "email": "rolan@gmail.com",
+          "name": "rolan",
+          "status": false,
+          "workarea": "developer",
+        },
+      ],
+    },
+    "extensions": Object {
+      "operation": null,
+    },
+  },
+  "headers": Object {
+    "content-type": "application/json; charset=utf-8",
+  },
+  "request": XMLHttpRequest {},
+  "status": 200,
+  "statusText": "OK",
+}
+`;
+
+exports[`user component getCustomUsers query using status field 1`] = `
+Object {
+  "config": Object {
+    "adapter": [Function],
+    "baseURL": "http://localhost:4000/graphql",
+    "data": "query=%0A%20%20%20%20query%20customFilter%20%7B%0A%20%20%20%20%20%20getCustomUsers(search%3A%20%7Bstatus%3A%20%7Beq%3A%20false%7D%7D)%20%7B%0A%20%20%20%20%20%20%20%20...User%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20fragment%20User%20on%20UserType%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20email%0A%20%20%20%20%20%20workarea%0A%20%20%20%20%20%20status%0A%20%20%20%20%20%20cellphone%0A%20%20%20%20%7D",
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Custom-Header": "foobar",
+    },
+    "maxBodyLength": -1,
+    "maxContentLength": -1,
+    "method": "post",
+    "timeout": 1000,
+    "transformRequest": Array [
+      [Function],
+    ],
+    "transformResponse": Array [
+      [Function],
+    ],
+    "url": "http://localhost:4000/graphql",
+    "validateStatus": [Function],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "data": Object {
+      "getCustomUsers": Array [
+        Object {
+          "cellphone": "67543214",
+          "email": "ximena@gmail.com",
+          "name": "ximena",
+          "status": false,
+          "workarea": "developer",
+        },
+        Object {
+          "cellphone": "67543214",
+          "email": "rolan@gmail.com",
+          "name": "rolan",
+          "status": false,
+          "workarea": "developer",
+        },
+      ],
+    },
+    "extensions": Object {
+      "operation": null,
+    },
+  },
+  "headers": Object {
+    "content-type": "application/json; charset=utf-8",
+  },
+  "request": XMLHttpRequest {},
+  "status": 200,
+  "statusText": "OK",
+}
+`;
+
+exports[`user component getCustomUsers query using workarea field 1`] = `
+Object {
+  "config": Object {
+    "adapter": [Function],
+    "baseURL": "http://localhost:4000/graphql",
+    "data": "query=%0A%20%20%20%20query%20customFilter%20%7B%0A%20%20%20%20%20%20getCustomUsers(search%3A%20%7Bworkarea%3A%20%7Bcontains%3A%20%22deve%22%7D%7D)%20%7B%0A%20%20%20%20%20%20%20%20...User%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20fragment%20User%20on%20UserType%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20email%0A%20%20%20%20%20%20workarea%0A%20%20%20%20%20%20status%0A%20%20%20%20%20%20cellphone%0A%20%20%20%20%7D",
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Custom-Header": "foobar",
+    },
+    "maxBodyLength": -1,
+    "maxContentLength": -1,
+    "method": "post",
+    "timeout": 1000,
+    "transformRequest": Array [
+      [Function],
+    ],
+    "transformResponse": Array [
+      [Function],
+    ],
+    "url": "http://localhost:4000/graphql",
+    "validateStatus": [Function],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "data": Object {
+      "getCustomUsers": Array [
+        Object {
+          "cellphone": "67543214",
+          "email": "ximena@gmail.com",
+          "name": "ximena",
+          "status": false,
+          "workarea": "developer",
+        },
+        Object {
+          "cellphone": "67543214",
+          "email": "rolan@gmail.com",
+          "name": "rolan",
+          "status": false,
+          "workarea": "developer",
+        },
+      ],
+    },
+    "extensions": Object {
+      "operation": null,
+    },
+  },
+  "headers": Object {
+    "content-type": "application/json; charset=utf-8",
+  },
+  "request": XMLHttpRequest {},
+  "status": 200,
+  "statusText": "OK",
+}
+`;
