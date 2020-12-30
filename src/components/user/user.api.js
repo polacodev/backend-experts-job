@@ -1,5 +1,6 @@
 import USER from './user.model';
 import buildCustomQuery from '../../constants/constant';
+import * as encrypt from '../../encode-decode/encode-decode';
 
 export const getUsersFilterAPI = async ({ search }) => {
   try {
@@ -30,7 +31,7 @@ export const addUserAPI = async ({ user }) => {
     const newUser = new USER({
       name: user.name,
       email: user.email,
-      password: user.password,
+      password: encrypt.encode(user.password),
       cellphone: user.cellphone,
       workarea: user.workarea,
       status: user.status,
