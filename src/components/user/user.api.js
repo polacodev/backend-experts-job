@@ -2,6 +2,16 @@ import USER from './user.model';
 import buildCustomQuery from '../../constants/constant';
 import * as encrypt from '../../encode-decode/encode-decode';
 
+const userAlreadyRegistered = async (email) => {
+  try {
+    const userEmail = { email };
+    const response = await USER.findOne(userEmail);
+    return response !== null;
+  } catch (error) {
+    return error;
+  }
+};
+
 export const getUsersFilterAPI = async ({ search }) => {
   try {
     return await USER.find(buildCustomQuery(search));
@@ -36,7 +46,7 @@ export const addUserAPI = async ({ user }) => {
       workarea: user.workarea,
       status: user.status,
     });
-    return await newUser.save();
+    return await userAlreadyRegistered(user.email) ? null : await newUser.save();
   } catch (error) {
     return error;
   }
