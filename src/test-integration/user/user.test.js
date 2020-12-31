@@ -24,7 +24,7 @@ describe('user component', () => {
     `;
 
     const response = await api.post(API_URL, querystring.stringify({ query }));
-    expect(response).toMatchSnapshot();
+    expect(response.data).toMatchSnapshot();
   });
 
   it('addUser mutation for second user', async () => {
@@ -48,7 +48,7 @@ describe('user component', () => {
     `;
 
     const response = await api.post(API_URL, querystring.stringify({ query }));
-    expect(response).toMatchSnapshot();
+    expect(response.data).toMatchSnapshot();
   });
 
   it('getAllUsers query', async () => {
@@ -68,7 +68,7 @@ describe('user component', () => {
     }`;
 
     const response = await api.post(API_URL, querystring.stringify({ query }));
-    expect(response).toMatchSnapshot();
+    expect(response.data).toMatchSnapshot();
   });
 
   it('getCustomUsers query using name field', async () => {
@@ -88,7 +88,7 @@ describe('user component', () => {
     }`;
 
     const response = await api.post(API_URL, querystring.stringify({ query }));
-    expect(response).toMatchSnapshot();
+    expect(response.data).toMatchSnapshot();
   });
 
   it('getCustomUsers query using workarea field', async () => {
@@ -108,7 +108,7 @@ describe('user component', () => {
     }`;
 
     const response = await api.post(API_URL, querystring.stringify({ query }));
-    expect(response).toMatchSnapshot();
+    expect(response.data).toMatchSnapshot();
   });
 
   it('getCustomUsers query using status field', async () => {
@@ -128,6 +128,6 @@ describe('user component', () => {
     }`;
 
     const response = await api.post(API_URL, querystring.stringify({ query }));
-    expect(response).toMatchSnapshot();
+    expect(response.data).toMatchSnapshot();
   });
 });

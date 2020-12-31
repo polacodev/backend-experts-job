@@ -17,7 +17,7 @@ describe('user component', () => {
     `;
 
     const response = await api.post(API_URL, querystring.stringify({ query }));
-    expect(response).toMatchSnapshot();
+    expect(response.data).toMatchSnapshot();
   });
 
   it('addNotification subscription for second notification', async () => {
@@ -34,7 +34,7 @@ describe('user component', () => {
     `;
 
     const response = await api.post(API_URL, querystring.stringify({ query }));
-    expect(response).toMatchSnapshot();
+    expect(response.data).toMatchSnapshot();
   });
 
   it('getAllNotifications query', async () => {
@@ -48,6 +48,6 @@ describe('user component', () => {
     `;
 
     const response = await api.post(API_URL, querystring.stringify({ query }));
-    expect(response).toMatchSnapshot();
+    expect(response.data).toMatchSnapshot();
   });
 });
