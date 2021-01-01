@@ -31,4 +31,6 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true,
   extensions,
 }));
+
+app.use('/', (req, res) => res.send('Welcome EP project'));
 app.listen(process.env.BACKEND_PORT, () => console.log('[success]'.success, `${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/graphql`));
