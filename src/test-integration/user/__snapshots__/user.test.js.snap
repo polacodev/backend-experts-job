@@ -1,0 +1,309 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user component addUser mutation for first user 1`] = `
+Object {
+  "data": Object {
+    "addUser": null,
+  },
+  "extensions": Object {
+    "operation": null,
+  },
+}
+`;
+
+exports[`user component addUser mutation for second user 1`] = `
+Object {
+  "data": Object {
+    "addUser": null,
+  },
+  "extensions": Object {
+    "operation": null,
+  },
+}
+`;
+
+exports[`user component getAllUsers query 1`] = `
+Object {
+  "data": Object {
+    "getUsers": Array [
+      Object {
+        "cellphone": "92998-3874",
+        "email": "Sincere@april.biz",
+        "name": "Leanne Graham Bret",
+        "status": false,
+        "workarea": "Romaguera-Crona",
+      },
+      Object {
+        "cellphone": "90566-7771",
+        "email": "Shanna@melissa.tv",
+        "name": "Ervin Howell Antonette",
+        "status": false,
+        "workarea": "Deckow-Crist",
+      },
+      Object {
+        "cellphone": "59590-4157",
+        "email": "Nathan@yesenia.net",
+        "name": "Clementine Bauch Samantha",
+        "status": false,
+        "workarea": "Romaguera-Jacobson",
+      },
+      Object {
+        "cellphone": "53919-4257",
+        "email": "Julianne.OConner@kory.org",
+        "name": "Patricia Lebsack Karianne",
+        "status": false,
+        "workarea": "Robel-Corkery",
+      },
+      Object {
+        "cellphone": "33263",
+        "email": "Lucio_Hettinger@annie.ca",
+        "name": "Chelsey Dietrich Kamren",
+        "status": false,
+        "workarea": "Keebler LLC",
+      },
+      Object {
+        "cellphone": "23505-1337",
+        "email": "Karley_Dach@jasper.info",
+        "name": "Mrs. Dennis Schulist Leopoldo_Corkery",
+        "status": false,
+        "workarea": "Considine-Lockman",
+      },
+      Object {
+        "cellphone": "58804-1099",
+        "email": "Telly.Hoeger@billy.biz",
+        "name": "Kurtis Weissnat Elwyn.Skiles",
+        "status": false,
+        "workarea": "Johns Group",
+      },
+      Object {
+        "cellphone": "45169",
+        "email": "Sherwood@rosamond.me",
+        "name": "Nicholas Runolfsdottir V Maxime_Nienow",
+        "status": false,
+        "workarea": "Abernathy Group",
+      },
+      Object {
+        "cellphone": "76495-3109",
+        "email": "Chaim_McDermott@dana.io",
+        "name": "Glenna Reichert Delphine",
+        "status": false,
+        "workarea": "Yost and Sons",
+      },
+      Object {
+        "cellphone": "31428-2261",
+        "email": "Rey.Padberg@karina.biz",
+        "name": "Clementina DuBuque Moriah.Stanton",
+        "status": false,
+        "workarea": "Hoeger LLC",
+      },
+      Object {
+        "cellphone": "65741258",
+        "email": "marcus@gmail.com",
+        "name": "marcus11",
+        "status": true,
+        "workarea": "DEV",
+      },
+      Object {
+        "cellphone": "65741258",
+        "email": "marcus@gmail.com",
+        "name": "marcus33",
+        "status": true,
+        "workarea": "DEV",
+      },
+      Object {
+        "cellphone": "65741258",
+        "email": "sese@gmail.com",
+        "name": "sesesuc",
+        "status": true,
+        "workarea": "DEV",
+      },
+      Object {
+        "cellphone": "65741258",
+        "email": "elpepe@gmail.com",
+        "name": "elpepe",
+        "status": true,
+        "workarea": "DEV",
+      },
+      Object {
+        "cellphone": "65741258",
+        "email": "elpepe1@gmail.com",
+        "name": "elpepe",
+        "status": true,
+        "workarea": "DEV",
+      },
+      Object {
+        "cellphone": "65741258",
+        "email": "elpepe2@gmail.com",
+        "name": "elpepe",
+        "status": true,
+        "workarea": "DEV",
+      },
+      Object {
+        "cellphone": "67543214",
+        "email": "ximena@gmail.com",
+        "name": "ximena",
+        "status": false,
+        "workarea": "developer",
+      },
+      Object {
+        "cellphone": "67543214",
+        "email": "rolan@gmail.com",
+        "name": "rolan",
+        "status": false,
+        "workarea": "developer",
+      },
+    ],
+  },
+  "extensions": Object {
+    "operation": null,
+  },
+}
+`;
+
+exports[`user component getCustomUsers query using name field 1`] = `
+Object {
+  "data": Object {
+    "getCustomUsers": Array [
+      Object {
+        "cellphone": "45169",
+        "email": "Sherwood@rosamond.me",
+        "name": "Nicholas Runolfsdottir V Maxime_Nienow",
+        "status": false,
+        "workarea": "Abernathy Group",
+      },
+      Object {
+        "cellphone": "67543214",
+        "email": "rolan@gmail.com",
+        "name": "rolan",
+        "status": false,
+        "workarea": "developer",
+      },
+    ],
+  },
+  "extensions": Object {
+    "operation": null,
+  },
+}
+`;
+
+exports[`user component getCustomUsers query using status field 1`] = `
+Object {
+  "data": Object {
+    "getCustomUsers": Array [
+      Object {
+        "cellphone": "92998-3874",
+        "email": "Sincere@april.biz",
+        "name": "Leanne Graham Bret",
+        "status": false,
+        "workarea": "Romaguera-Crona",
+      },
+      Object {
+        "cellphone": "90566-7771",
+        "email": "Shanna@melissa.tv",
+        "name": "Ervin Howell Antonette",
+        "status": false,
+        "workarea": "Deckow-Crist",
+      },
+      Object {
+        "cellphone": "59590-4157",
+        "email": "Nathan@yesenia.net",
+        "name": "Clementine Bauch Samantha",
+        "status": false,
+        "workarea": "Romaguera-Jacobson",
+      },
+      Object {
+        "cellphone": "53919-4257",
+        "email": "Julianne.OConner@kory.org",
+        "name": "Patricia Lebsack Karianne",
+        "status": false,
+        "workarea": "Robel-Corkery",
+      },
+      Object {
+        "cellphone": "33263",
+        "email": "Lucio_Hettinger@annie.ca",
+        "name": "Chelsey Dietrich Kamren",
+        "status": false,
+        "workarea": "Keebler LLC",
+      },
+      Object {
+        "cellphone": "23505-1337",
+        "email": "Karley_Dach@jasper.info",
+        "name": "Mrs. Dennis Schulist Leopoldo_Corkery",
+        "status": false,
+        "workarea": "Considine-Lockman",
+      },
+      Object {
+        "cellphone": "58804-1099",
+        "email": "Telly.Hoeger@billy.biz",
+        "name": "Kurtis Weissnat Elwyn.Skiles",
+        "status": false,
+        "workarea": "Johns Group",
+      },
+      Object {
+        "cellphone": "45169",
+        "email": "Sherwood@rosamond.me",
+        "name": "Nicholas Runolfsdottir V Maxime_Nienow",
+        "status": false,
+        "workarea": "Abernathy Group",
+      },
+      Object {
+        "cellphone": "76495-3109",
+        "email": "Chaim_McDermott@dana.io",
+        "name": "Glenna Reichert Delphine",
+        "status": false,
+        "workarea": "Yost and Sons",
+      },
+      Object {
+        "cellphone": "31428-2261",
+        "email": "Rey.Padberg@karina.biz",
+        "name": "Clementina DuBuque Moriah.Stanton",
+        "status": false,
+        "workarea": "Hoeger LLC",
+      },
+      Object {
+        "cellphone": "67543214",
+        "email": "ximena@gmail.com",
+        "name": "ximena",
+        "status": false,
+        "workarea": "developer",
+      },
+      Object {
+        "cellphone": "67543214",
+        "email": "rolan@gmail.com",
+        "name": "rolan",
+        "status": false,
+        "workarea": "developer",
+      },
+    ],
+  },
+  "extensions": Object {
+    "operation": null,
+  },
+}
+`;
+
+exports[`user component getCustomUsers query using workarea field 1`] = `
+Object {
+  "data": Object {
+    "getCustomUsers": Array [
+      Object {
+        "cellphone": "67543214",
+        "email": "ximena@gmail.com",
+        "name": "ximena",
+        "status": false,
+        "workarea": "developer",
+      },
+      Object {
+        "cellphone": "67543214",
+        "email": "rolan@gmail.com",
+        "name": "rolan",
+        "status": false,
+        "workarea": "developer",
+      },
+    ],
+  },
+  "extensions": Object {
+    "operation": null,
+  },
+}
+`;

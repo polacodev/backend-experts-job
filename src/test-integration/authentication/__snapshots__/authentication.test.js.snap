@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`authentication component get the user authentication 1`] = `
+Object {
+  "data": Object {
+    "authentication": Object {
+      "isAuthenticated": false,
+    },
+  },
+  "extensions": Object {
+    "operation": null,
+  },
+}
+`;
