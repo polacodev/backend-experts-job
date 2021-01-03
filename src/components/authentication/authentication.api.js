@@ -16,8 +16,8 @@ const authUser = async ({ auth }) => {
     const authData = { email: auth.email };
     const response = await USER.findOne(authData);
     return response === null
-      ? { isAuthenticated: false }
-      : { isAuthenticated: isUserAuthenticated(auth, response) };
+      ? { isAuthenticated: false, token: null }
+      : { isAuthenticated: isUserAuthenticated(auth, response), token: encrypt.encode(auth) };
   } catch (error) {
     return error;
   }
