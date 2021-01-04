@@ -15,6 +15,8 @@ const userType = new GraphQLObjectType({
     cellphone: { type: GraphQLString },
     workarea: { type: GraphQLString },
     status: { type: GraphQLBoolean },
+    description: { type: GraphQLString },
+    knowledge: { type: GraphQLString },
   }),
 });
 

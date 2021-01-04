@@ -45,6 +45,8 @@ export const addUserAPI = async ({ user }) => {
       cellphone: user.cellphone,
       workarea: user.workarea,
       status: user.status,
+      description: user.description,
+      knowledge: user.knowledge,
     });
     return await userAlreadyRegistered(user.email) ? null : await newUser.save();
   } catch (error) {

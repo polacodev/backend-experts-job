@@ -8,6 +8,10 @@ const USER = mongoose.model('User', new mongoose.Schema({
   cellphone: mongoose.Schema.Types.String,
   workarea: mongoose.Schema.Types.String,
   status: mongoose.Schema.Types.Boolean,
+  description: mongoose.Schema.Types.String,
+  knowledge: mongoose.Schema.Types.String,
+}, {
+  timestamps: true,
 }));
 
 export default USER;
