@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import USER from './user.model';
 import buildCustomQuery from '../../constants/constant';
 import * as encrypt from '../../encode-decode/encode-decode';
@@ -12,17 +14,36 @@ const userAlreadyRegistered = async (email) => {
   }
 };
 
-export const getUsersFilterAPI = async ({ search }) => {
-  try {
-    return await USER.find(buildCustomQuery(search));
-  } catch (error) {
-    return error;
+const getUsersWithParams = async (search, user) => {
+  let res = [];
+  let userDecoded = {};
+
+  if (search === undefined && user === undefined) {
+    res = USER.find();
   }
+
+  if (user && search) {
+    userDecoded = encrypt.decode(user);
+    const response = await USER.find(buildCustomQuery(search));
+    res = _.filter(response, (element) => element.email !== userDecoded.email);
+  }
+
+  if (user && search === undefined) {
+    userDecoded = encrypt.decode(user);
+    const response = await USER.find();
+    res = _.filter(response, (element) => element.email !== userDecoded.email);
+  }
+
+  if (search && user === undefined) {
+    res = await USER.find(buildCustomQuery(search));
+  }
+
+  return res;
 };
 
-export const getAllUsersAPI = async () => {
+export const getUsersFilterAPI = async ({ search, user }) => {
   try {
-    return await USER.find();
+    return await getUsersWithParams(search, user);
   } catch (error) {
     return error;
   }

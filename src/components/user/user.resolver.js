@@ -1,9 +1,9 @@
 import {
-  GraphQLNonNull, GraphQLID, GraphQLList,
+  GraphQLNonNull, GraphQLID, GraphQLList, GraphQLString,
 } from 'graphql';
 
 import {
-  getAllUsersAPI, getUserByIdAPI, addUserAPI,
+  getUserByIdAPI, addUserAPI,
   updateUserAPI, deleteUserAPI, getUsersFilterAPI,
 } from './user.api';
 import UserInput from '../../types/user.type';
@@ -45,11 +45,6 @@ export const deleteUser = {
   resolve: (obj, args) => deleteUserAPI(args),
 };
 
-export const getUsers = {
-  type: new GraphQLList(userType),
-  resolve: () => getAllUsersAPI(),
-};
-
 export const getUser = {
   type: userType,
   args: {
@@ -58,10 +53,11 @@ export const getUser = {
   resolve: (obj, args) => getUserByIdAPI(args),
 };
 
-export const getCustomUsers = {
+export const getUsers = {
   type: new GraphQLList(userType),
   args: {
-    search: { type: new GraphQLNonNull(SearchUserType) },
+    search: { type: SearchUserType },
+    user: { type: GraphQLString },
   },
   resolve: (obj, args) => getUsersFilterAPI(args),
 };
