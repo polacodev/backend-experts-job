@@ -11,7 +11,7 @@ const isUserAuthenticated = (auth, response) => {
   return _.isEqual({ email: auth.email, password: auth.password }, user);
 };
 
-const authUser = async ({ auth }) => {
+const authUserAPI = async ({ auth }) => {
   try {
     const authData = { email: auth.email };
     const response = await USER.findOne(authData);
@@ -23,4 +23,4 @@ const authUser = async ({ auth }) => {
   }
 };
 
-export default authUser;
+export default authUserAPI;

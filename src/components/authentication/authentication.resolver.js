@@ -1,6 +1,6 @@
 import { GraphQLNonNull } from 'graphql';
 
-import authUser from './authentication.api';
+import authUserAPI from './authentication.api';
 import AuthInput from '../../types/auth.type';
 import authType from './authentication.schema';
 
@@ -9,7 +9,7 @@ const authentication = {
   args: {
     auth: { type: new GraphQLNonNull(AuthInput) },
   },
-  resolve: (obj, args) => authUser(args),
+  resolve: (obj, args) => authUserAPI(args),
 };
 
 export default authentication;
