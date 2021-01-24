@@ -9,7 +9,6 @@ const UserInput = new GraphQLInputObjectType({
   fields: () => ({
     name: { type: GraphQLString },
     email: { type: GraphQLString },
-    password: { type: GraphQLString },
     cellphone: { type: GraphQLString },
     workarea: { type: GraphQLString },
     status: { type: GraphQLBoolean },

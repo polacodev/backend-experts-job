@@ -5,6 +5,7 @@ import {
 import {
   getUserByIdAPI, addUserAPI,
   updateUserAPI, deleteUserAPI, getUsersFilterAPI,
+  getUserByStringAPI,
 } from './user.api';
 import UserInput from '../../types/user.type';
 import SearchUserType from '../../types/search.type';
@@ -60,4 +61,12 @@ export const getUsers = {
     user: { type: GraphQLString },
   },
   resolve: (obj, args) => getUsersFilterAPI(args),
+};
+
+export const getUserByString = {
+  type: userType,
+  args: {
+    token: { type: GraphQLString },
+  },
+  resolve: (obj, args) => getUserByStringAPI(args),
 };

@@ -90,3 +90,11 @@ export const deleteUserAPI = async ({ _id }) => {
     return error;
   }
 };
+
+export const getUserByStringAPI = async ({ token }) => {
+  try {
+    return await USER.findOne({ email: encrypt.decode(token).email });
+  } catch (error) {
+    return error;
+  }
+};
