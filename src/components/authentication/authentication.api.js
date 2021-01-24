@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import _ from 'lodash';
 
 import USER from '../user/user.model';
@@ -15,9 +16,14 @@ const authUserAPI = async ({ auth }) => {
   try {
     const authData = { email: auth.email };
     const response = await USER.findOne(authData);
+    const user = {
+      _id: response._id,
+      name: response.name,
+      email: response.email,
+    };
     return response === null
       ? { isAuthenticated: false, token: null }
-      : { isAuthenticated: isUserAuthenticated(auth, response), token: encrypt.encode(auth) };
+      : { isAuthenticated: isUserAuthenticated(auth, response), token: encrypt.encode(user) };
   } catch (error) {
     return error;
   }
