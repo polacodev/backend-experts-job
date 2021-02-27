@@ -10,6 +10,7 @@ const contactType = new GraphQLObjectType({
   fields: () => ({
     _id: { type: GraphQLID },
     user_id: { type: GraphQLID },
+    createdBy: { type: GraphQLID },
     name: { type: GraphQLString },
     email: { type: GraphQLString },
     cellphone: { type: GraphQLString },

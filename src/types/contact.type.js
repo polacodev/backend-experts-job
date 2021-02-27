@@ -10,6 +10,7 @@ const ContactInput = new GraphQLInputObjectType({
   fields: () => ({
     name: { type: GraphQLString },
     _id: { type: GraphQLID },
+    createdBy: { type: GraphQLID },
     email: { type: GraphQLString },
     cellphone: { type: GraphQLString },
     workarea: { type: GraphQLString },

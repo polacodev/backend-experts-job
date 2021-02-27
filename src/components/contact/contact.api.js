@@ -11,7 +11,7 @@ export const getContactsAPI = async () => {
 
 export const getContactsByUserIdAPI = async ({ _id }) => {
   try {
-    return await CONTACT.find({ user_id: _id });
+    return await CONTACT.find({ createdBy: _id });
   } catch (error) {
     return error;
   }
@@ -22,6 +22,7 @@ export const addContactAPI = async ({ contact }) => {
     const newContact = new CONTACT({
       name: contact.name,
       user_id: contact._id,
+      createdBy: contact.createdBy,
       email: contact.email,
       cellphone: contact.cellphone,
       workarea: contact.workarea,

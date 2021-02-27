@@ -3,6 +3,9 @@ import { addUser, updateUser, deleteUser } from '../components/user/user.resolve
 import {
   addContact, updateContact, deleteContact,
 } from '../components/contact/contact.resolver';
+import {
+  addNotification, deleteNotification, updateNotification,
+} from '../components/notification/notification.resolver';
 
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',
@@ -13,6 +16,9 @@ const mutationType = new GraphQLObjectType({
     addContact,
     updateContact,
     deleteContact,
+    addNotification,
+    deleteNotification,
+    updateNotification,
   },
 });
 

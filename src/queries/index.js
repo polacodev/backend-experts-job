@@ -1,7 +1,7 @@
 import { GraphQLObjectType } from 'graphql';
 import { getUser, getUsers, getUserByString } from '../components/user/user.resolver';
 import { getContacts, getContactsByUserId } from '../components/contact/contact.resolver';
-import { getNotifications } from '../components/notification/notification.resolver';
+import { getNotifications, getNotificationsByUserId } from '../components/notification/notification.resolver';
 import authentication from '../components/authentication/authentication.resolver';
 
 const queryType = new GraphQLObjectType({
@@ -11,6 +11,7 @@ const queryType = new GraphQLObjectType({
     getUser,
     getUserByString,
     getNotifications,
+    getNotificationsByUserId,
     getContacts,
     getContactsByUserId,
     authentication,

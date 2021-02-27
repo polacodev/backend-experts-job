@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const CONTACT = mongoose.model('Contact', new mongoose.Schema({
   user_id: mongoose.Schema.Types.ObjectId,
+  createdBy: mongoose.Schema.Types.ObjectId,
   name: mongoose.Schema.Types.String,
   email: mongoose.Schema.Types.String,
   cellphone: mongoose.Schema.Types.String,
