@@ -17,7 +17,7 @@ export const getNotificationsByUserIdAPI = async ({ _id }) => {
   }
 };
 
-export const addNotificationAPI = async ({ notification }) => {
+export const createNotificationAPI = async ({ notification }) => {
   try {
     const newNotification = new NOTIFICATION({
       user_id: notification._id,

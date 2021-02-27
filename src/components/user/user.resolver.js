@@ -3,7 +3,7 @@ import {
 } from 'graphql';
 
 import {
-  getUserByIdAPI, addUserAPI,
+  getUserByIdAPI, createUserAPI,
   updateUserAPI, deleteUserAPI, getUsersFilterAPI,
   getUserByStringAPI,
 } from './user.api';
@@ -17,13 +17,13 @@ export const userAdded = {
   subscribe: () => pubsub.asyncIterator('USER_ADDED'),
 };
 
-export const addUser = {
+export const createUser = {
   type: userType,
   args: {
     user: { type: new GraphQLNonNull(UserInput) },
   },
   resolve: async (obj, args) => {
-    const data = await addUserAPI(args);
+    const data = await createUserAPI(args);
     pubsub.publish('USER_ADDED', { userAdded: data });
     return data;
   },

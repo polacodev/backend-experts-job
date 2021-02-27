@@ -3,20 +3,20 @@ import {
 } from 'graphql';
 
 import {
-  addContactAPI, updateContactAPI,
+  createContactAPI, updateContactAPI,
   deleteContactAPI, getContactsAPI,
   getContactsByUserIdAPI,
 } from './contact.api';
 import ContactInput from '../../types/contact.type';
 import contactType from './contact.schema';
 
-export const addContact = {
+export const createContact = {
   type: contactType,
   args: {
     contact: { type: new GraphQLNonNull(ContactInput) },
   },
   resolve: async (obj, args) => {
-    const data = await addContactAPI(args);
+    const data = await createContactAPI(args);
     return data;
   },
 };

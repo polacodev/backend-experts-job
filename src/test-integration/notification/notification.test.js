@@ -3,10 +3,10 @@ import querystring from 'querystring';
 import { API_URL, api } from '../services.config';
 
 describe('user component', () => {
-  it('addNotification subscription for first notification', async () => {
+  it('createNotification subscription for first notification', async () => {
     const query = `
-    subscription addNotification {
-      addNotification(notification: {
+    subscription createNotification {
+      createNotification(notification: {
         user_id: "id_fake",
         message: "first notification"
       }) {
@@ -20,10 +20,10 @@ describe('user component', () => {
     expect(response.data).toMatchSnapshot();
   });
 
-  it('addNotification subscription for second notification', async () => {
+  it('createNotification subscription for second notification', async () => {
     const query = `
-    subscription addNotification {
-      addNotification(notification: {
+    subscription createNotification {
+      createNotification(notification: {
         user_id: "id_fake",
         message: "second notification"
       }) {

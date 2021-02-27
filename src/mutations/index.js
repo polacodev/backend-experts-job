@@ -1,22 +1,22 @@
 import { GraphQLObjectType } from 'graphql';
-import { addUser, updateUser, deleteUser } from '../components/user/user.resolver';
+import { createUser, updateUser, deleteUser } from '../components/user/user.resolver';
 import {
-  addContact, updateContact, deleteContact,
+  createContact, updateContact, deleteContact,
 } from '../components/contact/contact.resolver';
 import {
-  addNotification, deleteNotification, updateNotification,
+  createNotification, deleteNotification, updateNotification,
 } from '../components/notification/notification.resolver';
 
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
-    addUser,
+    createUser,
     updateUser,
     deleteUser,
-    addContact,
+    createContact,
     updateContact,
     deleteContact,
-    addNotification,
+    createNotification,
     deleteNotification,
     updateNotification,
   },

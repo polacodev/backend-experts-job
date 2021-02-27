@@ -3,10 +3,10 @@ import querystring from 'querystring';
 import { API_URL, api } from '../services.config';
 
 describe('user component', () => {
-  it('addUser mutation for first user', async () => {
+  it('createUser mutation for first user', async () => {
     const query = `
-    mutation addUser {
-      addUser(user: { 
+    mutation createUser {
+      createUser(user: { 
         name: "ximena",
         email: "ximena@gmail.com",
         password: "sucmar123",
@@ -27,10 +27,10 @@ describe('user component', () => {
     expect(response.data).toMatchSnapshot();
   });
 
-  it('addUser mutation for second user', async () => {
+  it('createUser mutation for second user', async () => {
     const query = `
-    mutation addUser {
-      addUser(user: { 
+    mutation createUser {
+      createUser(user: { 
         name: "rolan",
         email: "rolan@gmail.com",
         password: "rolan123",

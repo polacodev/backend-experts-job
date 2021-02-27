@@ -17,7 +17,7 @@ export const getContactsByUserIdAPI = async ({ _id }) => {
   }
 };
 
-export const addContactAPI = async ({ contact }) => {
+export const createContactAPI = async ({ contact }) => {
   try {
     const newContact = new CONTACT({
       name: contact.name,

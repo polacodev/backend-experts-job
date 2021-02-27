@@ -2,19 +2,19 @@ import {
   GraphQLNonNull, GraphQLList, GraphQLID,
 } from 'graphql';
 import {
-  getAllNotificationsAPI, addNotificationAPI,
+  getAllNotificationsAPI, createNotificationAPI,
   getNotificationsByUserIdAPI, updateNotificationAPI,
   deleteNotificationAPI,
 } from './notification.api';
 import NotificationInput from '../../types/notification.type';
 import NotificationType from './notification.schema';
 
-export const addNotification = {
+export const createNotification = {
   type: NotificationType,
   args: {
     notification: { type: new GraphQLNonNull(NotificationInput) },
   },
-  resolve: (obj, args) => addNotificationAPI(args),
+  resolve: (obj, args) => createNotificationAPI(args),
 };
 
 export const updateNotification = {

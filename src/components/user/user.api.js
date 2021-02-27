@@ -57,7 +57,7 @@ export const getUserByIdAPI = async ({ _id }) => {
   }
 };
 
-export const addUserAPI = async ({ user }) => {
+export const createUserAPI = async ({ user }) => {
   try {
     const newUser = new USER({
       name: user.name,
