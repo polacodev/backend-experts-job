@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import { withFilter } from 'apollo-server';
+import _ from 'lodash';
 
 import {
   GraphQLNonNull, GraphQLList, GraphQLID,
@@ -14,22 +15,22 @@ import NotificationType from './notification.schema';
 import pubsub from '../../config/pub-subscription';
 
 // subscription
+export const notificationAddedById = {
+  type: NotificationType,
+  args: {
+    _id: { type: GraphQLNonNull(GraphQLID) },
+  },
+  subscribe:
+    withFilter(
+      () => pubsub.asyncIterator('NOTIFICATION_ADDED_BY_ID'),
+      (payload, args) => _.eq(payload.notificationAddedById.user_id, args._id),
+    ),
+};
+
 // export const notificationAdded = {
 //   type: NotificationType,
-//   args: {
-//     _id: { type: GraphQLNonNull(GraphQLID) },
-//   },
-//   subscribe:
-//     withFilter(
-//       () => pubsub.asyncIterator('NOTIFICATION_ADDED'),
-//       (payload, args) => payload.notificationAdded.user_id == args._id,
-//     ),
+//   subscribe: () => pubsub.asyncIterator('NOTIFICATION_ADDED'),
 // };
-
-export const notificationAdded = {
-  type: NotificationType,
-  subscribe: () => pubsub.asyncIterator('NOTIFICATION_ADDED'),
-};
 
 export const createNotification = {
   type: NotificationType,
@@ -37,10 +38,9 @@ export const createNotification = {
     notification: { type: new GraphQLNonNull(NotificationInput) },
   },
   resolve: async (obj, args) => {
-    console.log('0=>', args);
     const data = await createNotificationAPI(args);
-    console.log('1=>', data);
-    pubsub.publish('NOTIFICATION_ADDED', { notificationAdded: data });
+    // pubsub.publish('NOTIFICATION_ADDED', { notificationAdded: data });
+    pubsub.publish('NOTIFICATION_ADDED_BY_ID', { notificationAddedById: data });
     return data;
   },
 };

@@ -1,6 +1,9 @@
+/* eslint-disable no-underscore-dangle */
 import {
   GraphQLNonNull, GraphQLID, GraphQLList,
 } from 'graphql';
+import { withFilter } from 'apollo-server';
+import _ from 'lodash';
 
 import {
   createContactAPI, updateContactAPI,
@@ -11,10 +14,23 @@ import ContactInput from '../../types/contact.type';
 import contactType from './contact.schema';
 import pubsub from '../../config/pub-subscription';
 
-export const contactAdded = {
+// subscription
+export const contactAddedById = {
   type: contactType,
-  subscribe: () => pubsub.asyncIterator('CONTACT_ADDED'),
+  args: {
+    _id: { type: GraphQLNonNull(GraphQLID) },
+  },
+  subscribe:
+    withFilter(
+      () => pubsub.asyncIterator('CONTACT_ADDED_BY_ID'),
+      (payload, args) => _.eq(payload.contactAddedById.createdBy, args._id),
+    ),
 };
+
+// export const contactAdded = {
+//   type: contactType,
+//   subscribe: () => pubsub.asyncIterator('CONTACT_ADDED'),
+// };
 
 export const createContact = {
   type: contactType,
@@ -23,7 +39,8 @@ export const createContact = {
   },
   resolve: async (obj, args) => {
     const data = await createContactAPI(args);
-    pubsub.publish('CONTACT_ADDED', { contactAdded: data });
+    // pubsub.publish('CONTACT_ADDED', { contactAdded: data });
+    pubsub.publish('CONTACT_ADDED_BY_ID', { contactAddedById: data });
     return data;
   },
 };
