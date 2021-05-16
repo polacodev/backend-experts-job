@@ -17,9 +17,9 @@ const authUserAPI = async ({ auth }) => {
     const authData = { email: auth.email };
     const response = await USER.findOne(authData);
     const user = {
-      _id: response._id,
-      name: response.name,
-      email: response.email,
+      _id: response?._id,
+      name: response?.name,
+      email: response?.email,
     };
     return response === null
       ? { isAuthenticated: false, token: null }

@@ -9,6 +9,12 @@ import {
 } from './contact.api';
 import ContactInput from '../../types/contact.type';
 import contactType from './contact.schema';
+import pubsub from '../../config/pub-subscription';
+
+export const contactAdded = {
+  type: contactType,
+  subscribe: () => pubsub.asyncIterator('CONTACT_ADDED'),
+};
 
 export const createContact = {
   type: contactType,
@@ -17,6 +23,7 @@ export const createContact = {
   },
   resolve: async (obj, args) => {
     const data = await createContactAPI(args);
+    pubsub.publish('CONTACT_ADDED', { contactAdded: data });
     return data;
   },
 };

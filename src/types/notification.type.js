@@ -8,10 +8,10 @@ const NotificationInput = new GraphQLInputObjectType({
   name: 'NotificationInput',
   fields: () => ({
     _id: { type: GraphQLID },
-    createdBy: { type: GraphQLID },
-    message: { type: GraphQLString },
     name: { type: GraphQLString },
     email: { type: GraphQLString },
+    message: { type: GraphQLString },
+    createdBy: { type: GraphQLID },
     cellphone: { type: GraphQLString },
     workarea: { type: GraphQLString },
     knowledge: { type: GraphQLString },

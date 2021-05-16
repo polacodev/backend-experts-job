@@ -1,3 +1,6 @@
+/* eslint-disable no-underscore-dangle */
+import { withFilter } from 'apollo-server';
+
 import {
   GraphQLNonNull, GraphQLList, GraphQLID,
 } from 'graphql';
@@ -8,13 +11,38 @@ import {
 } from './notification.api';
 import NotificationInput from '../../types/notification.type';
 import NotificationType from './notification.schema';
+import pubsub from '../../config/pub-subscription';
+
+// subscription
+// export const notificationAdded = {
+//   type: NotificationType,
+//   args: {
+//     _id: { type: GraphQLNonNull(GraphQLID) },
+//   },
+//   subscribe:
+//     withFilter(
+//       () => pubsub.asyncIterator('NOTIFICATION_ADDED'),
+//       (payload, args) => payload.notificationAdded.user_id == args._id,
+//     ),
+// };
+
+export const notificationAdded = {
+  type: NotificationType,
+  subscribe: () => pubsub.asyncIterator('NOTIFICATION_ADDED'),
+};
 
 export const createNotification = {
   type: NotificationType,
   args: {
     notification: { type: new GraphQLNonNull(NotificationInput) },
   },
-  resolve: (obj, args) => createNotificationAPI(args),
+  resolve: async (obj, args) => {
+    console.log('0=>', args);
+    const data = await createNotificationAPI(args);
+    console.log('1=>', data);
+    pubsub.publish('NOTIFICATION_ADDED', { notificationAdded: data });
+    return data;
+  },
 };
 
 export const updateNotification = {

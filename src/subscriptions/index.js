@@ -1,12 +1,14 @@
 import { GraphQLObjectType } from 'graphql';
-import { createNotification } from '../components/notification/notification.resolver';
+import { notificationAdded } from '../components/notification/notification.resolver';
 import { userAdded } from '../components/user/user.resolver';
+import { contactAdded } from '../components/contact/contact.resolver';
 
 const subscriptionType = new GraphQLObjectType({
   name: 'Subscription',
   fields: {
-    createNotification,
+    notificationAdded,
     userAdded,
+    contactAdded,
   },
 });
 
