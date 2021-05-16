@@ -25,11 +25,13 @@
     "express": "^4.17.1",
     "express-graphql": "^0.11.0",
     "graphql": "^15.3.0",
+    "graphql-mqtt-subscriptions": "^1.2.0",
     "http": "^0.0.1-security",
     "jwt-decode": "^3.1.2",
     "jwt-encode": "^1.0.1",
     "lodash": "^4.17.20",
     "mongoose": "^5.10.1",
+    "mqtt": "^4.2.6",
     "nodemon": "^2.0.4",
     "subscriptions-transport-ws": "^0.9.18"
   },
