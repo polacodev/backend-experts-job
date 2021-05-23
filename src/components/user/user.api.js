@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 import USER from './user.model';
-import buildCustomQuery from '../../constants/constant';
+import { buildCustomQuery } from '../../constants/constant';
 import * as encrypt from '../../encode-decode/encode-decode';
 
 const userAlreadyRegistered = async (email) => {
