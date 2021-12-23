@@ -49,6 +49,7 @@ export const createNotification = {
       contents: { en: `${data.message}` },
       channel_for_external_user_ids: 'push',
       include_external_user_ids: [`${data.user_id}`],
+      // small_icon: "from resources",
     };
     // Calling to OneSignal REST API Create Notification
     sendNotification(message);

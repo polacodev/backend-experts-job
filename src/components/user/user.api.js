@@ -3,6 +3,7 @@ import _ from 'lodash';
 import USER from './user.model';
 import { buildCustomQuery } from '../../constants/constant';
 import * as encrypt from '../../encode-decode/encode-decode';
+import { getContactsByUserIdAPI } from '../contact/contact.api';
 
 const userAlreadyRegistered = async (email) => {
   try {
@@ -38,7 +39,10 @@ const getUsersWithParams = async (search, user) => {
     res = await USER.find(buildCustomQuery(search));
   }
 
-  return res;
+  // part to filter contacts and users and get only for an specific user
+  const contactsById = await getContactsByUserIdAPI(userDecoded);
+
+  return _.differenceBy(res, contactsById, 'email');
 };
 
 export const getUsersFilterAPI = async ({ search, user }) => {
