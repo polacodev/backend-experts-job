@@ -1,9 +1,13 @@
+/* eslint-disable no-underscore-dangle */
 import {
   GraphQLObjectType,
   GraphQLID,
   GraphQLString,
   GraphQLBoolean,
 } from 'graphql';
+
+import { getRatesAverageByUserIdAPI } from '../rate/rate.api';
+import { RateAverageType } from '../rate/rate.schema';
 
 const userType = new GraphQLObjectType({
   name: 'UserType',
@@ -17,6 +21,10 @@ const userType = new GraphQLObjectType({
     status: { type: GraphQLBoolean },
     description: { type: GraphQLString },
     knowledge: { type: GraphQLString },
+    rate: {
+      type: RateAverageType,
+      resolve: (obj) => getRatesAverageByUserIdAPI(obj),
+    },
   }),
 });
 
