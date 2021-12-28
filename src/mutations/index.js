@@ -6,6 +6,9 @@ import {
 import {
   createNotification, deleteNotification, updateNotification,
 } from '../components/notification/notification.resolver';
+import {
+  createRate, deleteRate,
+} from '../components/rate/rate.resolver';
 
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',
@@ -19,6 +22,8 @@ const mutationType = new GraphQLObjectType({
     createNotification,
     deleteNotification,
     updateNotification,
+    createRate,
+    deleteRate,
   },
 });
 
