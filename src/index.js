@@ -20,3 +20,5 @@ httpServer.listen(process.env.BACKEND_PORT, () => {
   console.log('[success]'.success, `Server ready at http://${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}${server.graphqlPath}`);
   console.log('[success]'.success, `Subscriptions ready at ws://${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}${server.subscriptionsPath}`);
 });
+
+export default server;
