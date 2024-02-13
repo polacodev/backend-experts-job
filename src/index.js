@@ -1,36 +1,24 @@
 import express from 'express';
-import cors from 'cors';
-import { graphqlHTTP } from 'express-graphql';
+import http from 'http';
+import { ApolloServer } from 'apollo-server-express';
 
 import schema from './schema';
 import database from './config/dbConfig';
 import 'dotenv/config';
 import './config/colorLogConfig';
 
+database();
 const app = express();
+const server = new ApolloServer({ schema });
 
-const extensions = ({
-  operationName,
-  // context,
-}) => ({
-  // runTime: Date.now() - context.startTime,
-  operation: operationName,
+server.applyMiddleware({ app });
+
+const httpServer = http.createServer(app);
+server.installSubscriptionHandlers(httpServer);
+
+httpServer.listen(process.env.BACKEND_PORT, () => {
+  console.log('[success]'.success, `Server ready at http://${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}${server.graphqlPath}`);
+  console.log('[success]'.success, `Subscriptions ready at ws://${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}${server.subscriptionsPath}`);
 });
 
-database();
-app.use(cors());
-app.use('/graphql', graphqlHTTP({
-  schema,
-  customFormatErrorFn: (error) => ({
-    message: error.message,
-    locations: error.locations,
-    original: error.originalError,
-    path: error.path,
-  }),
-  // context: { startTime: Date.now() },
-  graphiql: true,
-  extensions,
-}));
-
-app.use('/', (req, res) => res.send('Welcome EP project'));
-app.listen(process.env.BACKEND_PORT || 5000, () => console.log('[success]'.success, `${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/graphql`));
+export default server;

@@ -1,21 +1,23 @@
 import {
   GraphQLInputObjectType,
   GraphQLString,
+  GraphQLBoolean,
   GraphQLID,
 } from 'graphql';
 
-const NotificationInput = new GraphQLInputObjectType({
-  name: 'NotificationInput',
+const ContactInput = new GraphQLInputObjectType({
+  name: 'ContactInput',
   fields: () => ({
-    _id: { type: GraphQLID },
     name: { type: GraphQLString },
-    email: { type: GraphQLString },
-    message: { type: GraphQLString },
+    _id: { type: GraphQLID },
     createdBy: { type: GraphQLID },
+    email: { type: GraphQLString },
     cellphone: { type: GraphQLString },
     workarea: { type: GraphQLString },
+    status: { type: GraphQLBoolean },
+    description: { type: GraphQLString },
     knowledge: { type: GraphQLString },
   }),
 });
 
-export default NotificationInput;
+export default ContactInput;

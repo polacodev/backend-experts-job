@@ -4,7 +4,7 @@ import 'dotenv/config';
 import './colorLogConfig';
 
 // const MONGO_URL = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
-const MONGO_URL = `${process.env.MONGO_URL}`;
+const MONGO_URL = `${process.env.MONGO_URL}${process.env.DB_NAME}`;
 const database = async () => {
   try {
     await mongoose.connect(MONGO_URL,

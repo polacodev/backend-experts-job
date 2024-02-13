@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integration testing component Contacts component Get Contact by User Id 1`] = `
+Object {
+  "data": Object {
+    "getContactsByUserId": Array [],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Integration testing component Contacts component Get all Contacts 1`] = `
+Object {
+  "data": Object {
+    "getContacts": Array [],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Integration testing component Rate component Get Rate Average by User Id 1`] = `
+Object {
+  "data": Object {
+    "getRatesAverageByUserId": Object {
+      "averageRate": 0,
+      "user_id": "61d820e106bbd50a38a40b05",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Integration testing component Rate component Get Rate by User Id 1`] = `
+Object {
+  "data": Object {
+    "getRatesByUserId": Array [],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Integration testing component Rate component Get all Rates 1`] = `
+Object {
+  "data": Object {
+    "getRates": Array [],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Integration testing component authentication component get the user authentication 1`] = `
+Object {
+  "data": Object {
+    "authentication": Object {
+      "isAuthenticated": false,
+      "token": null,
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Integration testing component user component createUser mutation for first user 1`] = `
+Object {
+  "data": Object {
+    "createUser": Object {
+      "cellphone": "67543214",
+      "email": "ximena@gmail.com",
+      "name": "ximena",
+      "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.InN1Y21hcjEyMyI.oY9heCKZNZmpjW-8iS1S4xS1A5C0oTeDsBjlaudrQDs",
+      "status": false,
+      "workarea": "developer",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Integration testing component user component createUser mutation for second user 1`] = `
+Object {
+  "data": Object {
+    "createUser": Object {
+      "cellphone": "67543214",
+      "email": "rolan@gmail.com",
+      "name": "rolan",
+      "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.InJvbGFuMTIzIg.4VT_HgmMjXZjbaBsLEJnIWBg_WPmJGf9yT7idlL1rok",
+      "status": false,
+      "workarea": "developer",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Integration testing component user component getAllUsers query 1`] = `
+Object {
+  "data": Object {
+    "getUsers": Array [
+      Object {
+        "cellphone": "67543214",
+        "email": "rolan@gmail.com",
+        "name": "rolan",
+        "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.InJvbGFuMTIzIg.4VT_HgmMjXZjbaBsLEJnIWBg_WPmJGf9yT7idlL1rok",
+        "workarea": "developer",
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Integration testing component user component getCustomUsers query using name field 1`] = `
+Object {
+  "data": Object {
+    "getUsers": Array [
+      Object {
+        "cellphone": "67543214",
+        "email": "ximena@gmail.com",
+        "name": "ximena",
+        "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.InN1Y21hcjEyMyI.oY9heCKZNZmpjW-8iS1S4xS1A5C0oTeDsBjlaudrQDs",
+        "workarea": "developer",
+      },
+      Object {
+        "cellphone": "67543214",
+        "email": "rolan@gmail.com",
+        "name": "rolan",
+        "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.InJvbGFuMTIzIg.4VT_HgmMjXZjbaBsLEJnIWBg_WPmJGf9yT7idlL1rok",
+        "workarea": "developer",
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Integration testing component user component getCustomUsers query using status field 1`] = `
+Object {
+  "data": Object {
+    "getUsers": Array [
+      Object {
+        "cellphone": "67543214",
+        "email": "ximena@gmail.com",
+        "name": "ximena",
+        "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.InN1Y21hcjEyMyI.oY9heCKZNZmpjW-8iS1S4xS1A5C0oTeDsBjlaudrQDs",
+        "workarea": "developer",
+      },
+      Object {
+        "cellphone": "67543214",
+        "email": "rolan@gmail.com",
+        "name": "rolan",
+        "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.InJvbGFuMTIzIg.4VT_HgmMjXZjbaBsLEJnIWBg_WPmJGf9yT7idlL1rok",
+        "workarea": "developer",
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;

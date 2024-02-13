@@ -1,6 +1,9 @@
+import _ from 'lodash';
+
 import USER from './user.model';
-import buildCustomQuery from '../../constants/constant';
+import { buildCustomQuery } from '../../constants/constant';
 import * as encrypt from '../../encode-decode/encode-decode';
+import { getContactsByUserIdAPI } from '../contact/contact.api';
 
 const userAlreadyRegistered = async (email) => {
   try {
@@ -12,17 +15,39 @@ const userAlreadyRegistered = async (email) => {
   }
 };
 
-export const getUsersFilterAPI = async ({ search }) => {
-  try {
-    return await USER.find(buildCustomQuery(search));
-  } catch (error) {
-    return error;
+const getUsersWithParams = async (search, user) => {
+  let res = [];
+  let userDecoded = {};
+
+  if (search === undefined && user === undefined) {
+    res = USER.find();
   }
+
+  if (user && search) {
+    userDecoded = encrypt.decode(user);
+    const response = await USER.find(buildCustomQuery(search));
+    res = _.filter(response, (element) => element.email !== userDecoded.email);
+  }
+
+  if (user && search === undefined) {
+    userDecoded = encrypt.decode(user);
+    const response = await USER.find();
+    res = _.filter(response, (element) => element.email !== userDecoded.email);
+  }
+
+  if (search && user === undefined) {
+    res = await USER.find(buildCustomQuery(search));
+  }
+
+  // part to filter contacts and users and get only for an specific user
+  const contactsById = await getContactsByUserIdAPI(userDecoded);
+
+  return _.differenceBy(res, contactsById, 'email');
 };
 
-export const getAllUsersAPI = async () => {
+export const getUsersFilterAPI = async ({ search, user }) => {
   try {
-    return await USER.find();
+    return await getUsersWithParams(search, user);
   } catch (error) {
     return error;
   }
@@ -36,7 +61,7 @@ export const getUserByIdAPI = async ({ _id }) => {
   }
 };
 
-export const addUserAPI = async ({ user }) => {
+export const createUserAPI = async ({ user }) => {
   try {
     const newUser = new USER({
       name: user.name,
@@ -45,6 +70,8 @@ export const addUserAPI = async ({ user }) => {
       cellphone: user.cellphone,
       workarea: user.workarea,
       status: user.status,
+      description: user.description,
+      knowledge: user.knowledge,
     });
     return await userAlreadyRegistered(user.email) ? null : await newUser.save();
   } catch (error) {
@@ -63,6 +90,14 @@ export const updateUserAPI = async ({ _id, user }) => {
 export const deleteUserAPI = async ({ _id }) => {
   try {
     return await USER.findByIdAndDelete(_id);
+  } catch (error) {
+    return error;
+  }
+};
+
+export const getUserByStringAPI = async ({ token }) => {
+  try {
+    return await USER.findOne({ email: encrypt.decode(token).email });
   } catch (error) {
     return error;
   }
